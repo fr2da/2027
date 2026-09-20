@@ -3,6 +3,7 @@
 
 :root {
   color-scheme: light;
+  background-color: #ffffff;
 }
 
 .theme-light {
@@ -32,6 +33,7 @@
 html,
 body {
   min-height: 100%;
+  background-color: #ffffff;
 }
 
 body {

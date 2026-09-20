@@ -15,6 +15,14 @@ export default function Page() {
     isDark: boolean
   } | null>(null)
 
+  useEffect(() => {
+    const themeColor = isDarkMode ? '#000000' : '#ffffff'
+    document.documentElement.style.colorScheme = isDarkMode ? 'dark' : 'light'
+    document.documentElement.style.backgroundColor = themeColor
+    document.body.style.backgroundColor = themeColor
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor)
+  }, [isDarkMode])
+
   const toggleTheme = () => {
     if (themeTransition) return
 
@@ -50,7 +58,7 @@ export default function Page() {
 
   return (
     <main
-      className={`relative flex min-h-screen items-center justify-center overflow-hidden ${
+      className={`relative flex min-h-[100dvh] items-center justify-center overflow-hidden ${
         isDarkMode ? 'theme-dark' : 'theme-light'
       }`}
       onClick={toggleTheme}
