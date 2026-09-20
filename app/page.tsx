@@ -67,8 +67,6 @@ export default function Page() {
       onClick={toggleTheme}
     >
       <div className="text-center">
-        <h1 className="mb-2 text-4xl font-semibold text-current">2027년까지:</h1>
-        
         <div className="flex justify-center gap-3 sm:gap-8">
           <div className="flex flex-col items-center">
             <div className="mb-1 w-20 text-center text-5xl font-bold text-current sm:w-28 sm:text-7xl">
