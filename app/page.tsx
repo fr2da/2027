@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import NumberFlow from '@number-flow/react'
+import Confetti from 'react-confetti'
 
 export default function Page() {
   const [countdown, setCountdown] = useState({
@@ -11,6 +12,7 @@ export default function Page() {
     seconds: 0,
   })
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isFinished, setIsFinished] = useState(false)
   const [themeTransition, setThemeTransition] = useState<{
     isDark: boolean
   } | null>(null)
@@ -48,6 +50,7 @@ export default function Page() {
         })
       } else {
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        setIsFinished(true)
       }
     }
 
@@ -105,6 +108,11 @@ export default function Page() {
             setThemeTransition(null)
           }}
         />
+      )}
+      {isFinished && (
+        <div className="pointer-events-none fixed inset-0 z-20">
+          <Confetti recycle={false} numberOfPieces={1000} />
+        </div>
       )}
     </main>
   )
