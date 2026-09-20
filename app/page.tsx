@@ -35,7 +35,7 @@ export default function Page() {
 
   useEffect(() => {
     const updateCountdown = () => {
-      const target = new Date('2027-01-01T00:00:00+09:00').getTime() - 1000
+      const target = new Date('2027-01-01T00:00:00+09:00').getTime()
       const now = new Date().getTime()
       const difference = target - now
 
